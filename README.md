@@ -1,5 +1,6 @@
 # emacs-docker
 ## Tags
+- `26.2`
 
 ## Usage
 ```bash
