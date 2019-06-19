@@ -36,6 +36,8 @@ if [ -z "${USERNAME}" ] || [ -z "${USERID}" ] || [ -z "${GROUPID}" ]; then
 else
   init_user
 
+  sh /usr/local/bin/init_emacs.sh "${USERNAME}"
+
   service ssh start
   sshpass -p ${PASSPHRASE} -P 'Enter passphrase for key' ssh -i "/home/${USERNAME}/.ssh/id_rsa" -o StrictHostKeyChecking=no "${USERNAME}@localhost"
 fi
