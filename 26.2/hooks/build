@@ -1,0 +1,9 @@
+#!/bin/bash -
+
+env
+
+SRCBUILD_TAG="${DOCKER_REPO}:${DOCKER_TAG}-src"
+docker build --no-cache --target build-stage -t ${SRCBUILD_TAG} .
+docker push ${SRCBUILD_TAG}
+
+docker build -t ${IMAGE_NAME} .
