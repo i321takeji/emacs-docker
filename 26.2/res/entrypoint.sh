@@ -21,7 +21,7 @@ init_user() {
   fi
 
   if [ -f "${XAUTH_FILE}" ]; then
-    ln -s /xfiles/.Xauthority "/home/${USERNAME}"
+    ln -s "${XAUTH_FILE}" "/home/${USERNAME}"
   fi
 
   su -c "mkdir /home/${USERNAME}/.ssh" "${USERNAME}"
