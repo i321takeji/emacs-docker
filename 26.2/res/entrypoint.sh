@@ -40,6 +40,7 @@ else
 
   sh /usr/local/bin/init_emacs.sh "${USERNAME}"
 
+  # for emacsclient error (*ERROR*: Could not open file: /dev/pts/0)
   service ssh start >/dev/null 2>&1
   sshpass -p ${PASSPHRASE} -P 'Enter passphrase for key' ssh -i "/home/${USERNAME}/.ssh/id_rsa" -o StrictHostKeyChecking=no "${USERNAME}@localhost" 2>/dev/null
 fi
